@@ -17,10 +17,10 @@ jobs:
         run: |
           apt-get update
           apt-get install -y git python3-pip python3-pytest python3-numpy \
+            python3-opencv python3-zmq \
             ros-${{ matrix.distro }}-tf2-ros ros-${{ matrix.distro }}-turtlesim \
             ros-${{ matrix.distro }}-diagnostic-msgs
-          pip3 install --break-system-packages python-openhab-rest-client \
-            opencv-python-headless pyzmq
+          pip3 install --break-system-packages python-openhab-rest-client
           cd src
           git clone --depth 1 https://github.com/Michdo93/ros2_openhab_ws.git
           git clone --depth 1 https://github.com/Michdo93/ROS2-Kinect-v1-Xbox-360.git
