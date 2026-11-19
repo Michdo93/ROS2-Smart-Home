@@ -27,5 +27,6 @@ setup(
         "abstand = sh_kamera.abstand:main",
         "synchron = sh_kamera.synchron:main",
         "punktwolke = sh_kamera.punktwolke:main",
+        "tag_nacht = sh_kamera.tag_nacht:main",
     ]},
 )
