@@ -47,7 +47,8 @@ class Bandbreite(Node):
         gesamt = 0.0
         for thema, (n, b) in self.zaehler.items():
             gesamt += b / dauer / 1e6
-            self.get_logger().info(f"{thema:<38} {n / dauer:5.1f} Hz {b / dauer / 1e6:7.2f} MB/s")
+            self.get_logger().info(
+                f"{thema:<38} {n / dauer:5.1f} Hz {b / dauer / 1e6:7.2f} MB/s")
         self.get_logger().info(f"{'gesamt':<38} {'':8} {gesamt:7.2f} MB/s")
         self.zaehler = {t: [0, 0] for t in self.themen}
         self.start = time.monotonic()

@@ -98,7 +98,8 @@ def zeile(name, werte):
     if not werte:
         return f"{name:<26} keine Bilder empfangen"
     q = statistics.quantiles(werte, n=100)
-    return (f"{name:<26} {len(werte):4d}/{BILDER}  Median {statistics.median(werte):6.2f} ms"
+    median = statistics.median(werte)
+    return (f"{name:<26} {len(werte):4d}/{BILDER}  Median {median:6.2f} ms"
             f"  p95 {q[94]:6.2f} ms  max {max(werte):6.2f} ms")
 
 

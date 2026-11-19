@@ -19,7 +19,8 @@ class Bewegung(Node):
         thema = self.declare_parameter("bild", "/kinect_v1/rgb/image_raw").value
         self.schwelle = self.declare_parameter("schwelle", 0.01).value  # Anteil der Pixel
         self.pub = self.create_publisher(
-            Bool, "bewegung", QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
+            Bool, "bewegung",
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self.create_subscription(Image, thema, self.bild, 2)
         self.vorher, self.zustand, self.zaehler = None, None, 0
 

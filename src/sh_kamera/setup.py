@@ -24,5 +24,8 @@ setup(
         "kompressor = sh_kamera.kompressor:main",
         "bewegung = sh_kamera.bewegung:main",
         "vergleich_zmq = sh_kamera.vergleich_zmq:main",
+        "abstand = sh_kamera.abstand:main",
+        "synchron = sh_kamera.synchron:main",
+        "punktwolke = sh_kamera.punktwolke:main",
     ]},
 )

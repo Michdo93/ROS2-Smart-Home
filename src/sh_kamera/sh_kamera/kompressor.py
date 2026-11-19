@@ -2,7 +2,8 @@
 
 Entspricht dem compressed-Transport von image_transport, ohne C++-Plugins.
 
-    ros2 run sh_kamera kompressor --ros-args -p bild:=/kinect_v1/rgb/image_raw -p qualitaet:=80
+    ros2 run sh_kamera kompressor --ros-args -p bild:=/kinect_v1/rgb/image_raw \
+        -p qualitaet:=80
 """
 import cv2
 import numpy as np
@@ -24,7 +25,8 @@ class Kompressor(Node):
         if m.encoding not in ("rgb8", "bgr8", "mono8"):
             return
         kanaele = 1 if m.encoding == "mono8" else 3
-        pixel = np.frombuffer(m.data, np.uint8).reshape(m.height, m.step)[:, :m.width * kanaele]
+        zeilen = np.frombuffer(m.data, np.uint8).reshape(m.height, m.step)
+        pixel = zeilen[:, :m.width * kanaele]
         pixel = pixel.reshape(m.height, m.width, kanaele)
         if m.encoding == "rgb8":
             pixel = pixel[..., ::-1]                      # OpenCV erwartet BGR
