@@ -41,5 +41,6 @@ jobs:
           timeout -k 5 40 ros2 run kinect_v1_ros2 kinect_v1_node --ros-args \
             -r __ns:=/kinect_v1 -p simulate:=true &
           timeout -k 5 40 ros2 run sh_hand hand_detektor &
+          sleep 8
           timeout -k 5 35 ros2 topic echo --once /hand_erkannt --qos-durability transient_local
           kill %1 %2 2>/dev/null || true
