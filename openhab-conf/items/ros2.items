@@ -1,0 +1,11 @@
+// Items der Beispiele aus "Smart Home & ROS2" – Gruppe gROS wird von der Brücke übertragen
+Group  gROS                "ROS 2"
+Switch Flur_Licht          "Flurlicht"                 (gROS)  ["Lightbulb"]
+Switch Flur_Bewegung       "Bewegung Flur"             (gROS)  ["MotionDetector"]
+Switch Flur_Hand           "Hand erkannt (Kinect)"     (gROS)
+Switch Wohnzimmer_Licht    "Deckenlicht Wohnzimmer"    (gROS)  ["Lightbulb"]
+Dimmer Wohnzimmer_Dimmer   "Stehlampe Wohnzimmer"      (gROS)  ["Lightbulb"]
+Rollershutter Kueche_Rollladen "Rollladen Küche"       (gROS)
+Number:Temperature Wohnzimmer_Temperatur "Temperatur [%.1f °C]" (gROS)
+String Roboter_Status      "Roboter [%s]"              (gROS)
+Switch Roboter_Kontrollgang "Kontrollgang starten"     (gROS)

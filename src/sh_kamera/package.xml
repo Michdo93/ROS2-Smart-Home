@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>sh_kamera</name>
+  <version>1.0.0</version>
+  <description>Kapitel 13 und 16: Kamerabilder messen, komprimieren, teilen</description>
+  <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
+  <license>MIT</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>kinect_v1_ros2</exec_depend>
+  <exec_depend>sh_hand</exec_depend>
+  <exec_depend>rosidl_runtime_py</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-zmq</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

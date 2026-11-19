@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kapitel 19: was jeder Knoten braucht – Log, Parameter-Ereignisse, eigene Parameter -->
+<profile>
+  <topics publish="ALLOW">
+    <topic>/rosout</topic>
+    <topic>/parameter_events</topic>
+  </topics>
+  <topics subscribe="ALLOW">
+    <topic>/parameter_events</topic>
+  </topics>
+  <services reply="ALLOW">
+    <service>~/describe_parameters</service>
+    <service>~/get_parameter_types</service>
+    <service>~/get_parameters</service>
+    <service>~/get_type_description</service>
+    <service>~/list_parameters</service>
+    <service>~/set_parameters</service>
+    <service>~/set_parameters_atomically</service>
+  </services>
+</profile>

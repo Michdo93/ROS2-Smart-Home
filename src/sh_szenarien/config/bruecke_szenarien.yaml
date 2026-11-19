@@ -1,0 +1,6 @@
+# Kapitel 12: Brücke für die Szenarien – alle Items der Gruppe gROS
+openhab_bridge:
+  ros__parameters:
+    items: [""]
+    groups: ["gROS"]
+    tags: [""]

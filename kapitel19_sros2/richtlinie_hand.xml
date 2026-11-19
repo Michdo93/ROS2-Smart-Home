@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kapitel 19: wer darf was? Alles, was hier fehlt, ist verboten. -->
+<policy version="0.2.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <enclaves>
+    <enclave path="/kinect_v1/driver">
+      <profiles>
+        <profile ns="/kinect_v1" node="driver">
+          <xi:include href="gemeinsam.xml" xpointer="xpointer(/profile/*)"/>
+          <topics publish="ALLOW">
+            <topic>/kinect_v1/*</topic>
+            <topic>/kinect_v1/*/*</topic>
+            <topic>/tf_static</topic>
+          </topics>
+        </profile>
+      </profiles>
+    </enclave>
+    <enclave path="/hand_detektor">
+      <profiles>
+        <profile ns="/" node="hand_detektor">
+          <xi:include href="gemeinsam.xml" xpointer="xpointer(/profile/*)"/>
+          <topics subscribe="ALLOW">
+            <topic>/kinect_v1/depth/image_raw</topic>
+          </topics>
+          <topics publish="ALLOW">
+            <topic>/hand_erkannt</topic>
+            <topic>/hand_position</topic>
+          </topics>
+        </profile>
+      </profiles>
+    </enclave>
+    <enclave path="/openhab_bridge">
+      <profiles>
+        <profile ns="/" node="openhab_bridge">
+          <xi:include href="gemeinsam.xml" xpointer="xpointer(/profile/*)"/>
+          <topics subscribe="ALLOW">
+            <topic>/hand_erkannt</topic>
+            <topic>/openhab/command</topic>
+            <topic>/openhab/items/*/command</topic>
+          </topics>
+          <topics publish="ALLOW">
+            <topic>/openhab/items/*/state</topic>
+            <topic>/openhab/items/*/value</topic>
+            <topic>/diagnostics</topic>
+          </topics>
+          <services reply="ALLOW">
+            <service>/openhab/*</service>
+          </services>
+        </profile>
+      </profiles>
+    </enclave>
+  </enclaves>
+</policy>

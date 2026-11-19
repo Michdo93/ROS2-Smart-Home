@@ -1,0 +1,7 @@
+// Kapitel 17: ROS 2 meldet "Hand erkannt" (Flur_Hand), openHAB entscheidet, was passiert
+rule "Hand erkannt schaltet das Flurlicht um"
+when
+    Item Flur_Hand changed to ON
+then
+    Flur_Licht.sendCommand(if (Flur_Licht.state == ON) OFF else ON)
+end

@@ -1,0 +1,7 @@
+# Kapitel 10: Brücke mit ausdrücklich genannten Items
+#   ros2 launch openhab_bridge bridge.launch.py params:=$PWD/bruecke_items.yaml
+openhab_bridge:
+  ros__parameters:
+    items: ["Flur_Licht", "Wohnzimmer_Dimmer", "Wohnzimmer_Temperatur"]
+    groups: [""]
+    tags: [""]
