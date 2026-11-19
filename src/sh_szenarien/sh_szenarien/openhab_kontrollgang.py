@@ -60,7 +60,8 @@ class OpenHABKontrollgang(Node):
 
     def fertig(self, zukunft):
         r = zukunft.result().result
-        self.openhab("Roboter_Status", f"{r.meldung} ({r.besucht} Räume)")
+        self.openhab("Roboter_Status",
+                     f"{r.meldung} ({r.besucht} von {len(self.raeume)} Räumen)")
         self.openhab("Roboter_Kontrollgang", "OFF", update=False)
         self.ziel = None
 

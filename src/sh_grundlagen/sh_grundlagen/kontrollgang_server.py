@@ -8,6 +8,7 @@ import time
 
 import rclpy
 from rclpy.action import ActionServer, CancelResponse
+from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import ExternalShutdownException, MultiThreadedExecutor
 from rclpy.node import Node
 from sh_interfaces.action import Kontrollgang
@@ -17,8 +18,10 @@ class KontrollgangServer(Node):
     def __init__(self):
         super().__init__("kontrollgang_server")
         self.dauer = self.declare_parameter("sekunden_pro_raum", 2.0).value
+        # Reentrant: Abbruchanfragen dürfen parallel zum laufenden Auftrag ankommen
         ActionServer(self, Kontrollgang, "kontrollgang", self.ausfuehren,
-                     cancel_callback=lambda _ziel: CancelResponse.ACCEPT)
+                     cancel_callback=lambda _ziel: CancelResponse.ACCEPT,
+                     callback_group=ReentrantCallbackGroup())
 
     def ausfuehren(self, ziel):
         raeume = list(ziel.request.raeume)

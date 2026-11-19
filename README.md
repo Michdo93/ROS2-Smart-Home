@@ -46,6 +46,7 @@ Die Konfiguration für openHAB: `openhab-conf/items/ros2.items` nach `$OPENHAB_C
 | 7 | `src/sh_grundlagen/launch/haus.launch.py` | drei Räume mit Namespaces und Remapping |
 | 8 | `kapitel08_rest_sse/` | REST API und Server-Sent Events mit python-openhab-rest-client |
 | 10 | `kapitel10_bruecke/` | Konfigurationen der Brücke: Items, Gruppe, Tags, ROS-Eingänge |
+| 11 | `kapitel11_vergleich/` | Laufzeit und Speicher von Python- und C++-Brücke messen |
 | 12 | `src/sh_szenarien/` | openHAB-Schalter startet eine Action, turtlesim-Roboter, Aufzeichnung mit rosbag2 |
 | 13, 16 | `src/sh_kamera/` | Bandbreite messen, JPEG-Kompression, Bewegungserkennung, Vergleich mit ZeroMQ, viele Anwendungen an einer Kamera |
 | 17 | `src/sh_hand/` | Projekt „Hand erkannt“: Kinect → ROS 2 → openHAB |
