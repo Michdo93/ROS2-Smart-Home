@@ -9,9 +9,9 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
-from launch.conditions import LaunchConfigurationEquals
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PythonExpression
+from launch.substitutions import EqualsSubstitution, LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
@@ -22,7 +22,7 @@ def treiber(version):
     return IncludeLaunchDescription(
         PythonLaunchDescriptionSource(datei),
         launch_arguments={"simulate": LaunchConfiguration("simulate")}.items(),
-        condition=LaunchConfigurationEquals("kamera", version))
+        condition=IfCondition(EqualsSubstitution(LaunchConfiguration("kamera"), version)))
 
 
 def generate_launch_description():

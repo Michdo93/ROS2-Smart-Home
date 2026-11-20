@@ -33,7 +33,8 @@ class HandDetektor(Node):
         self.zaehler += 1
         if m.encoding != "16UC1" or self.zaehler % self.jedes:
             return
-        tiefe = np.frombuffer(m.data, np.uint16).reshape(m.height, m.step // 2)[:, :m.width]
+        zeilen = np.frombuffer(m.data, np.uint16).reshape(m.height, m.step // 2)
+        tiefe = zeilen[:, : m.width]                        # Füllbytes abschneiden
         erkannt, x, y = hand_im_bild(tiefe)
         if erkannt:
             p = PointStamped(header=m.header)
