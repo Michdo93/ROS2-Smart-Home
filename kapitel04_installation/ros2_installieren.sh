@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Kapitel 4: ROS 2 aus den offiziellen Paketquellen installieren
-#   Ubuntu 26.04 -> Lyrical Luth, Ubuntu 24.04 -> Jazzy Jalisco (auch Raspberry Pi 4/5, 64 Bit)
+#   Ubuntu 26.04 -> Lyrical Luth, Ubuntu 24.04 -> Jazzy Jalisco (auch Pi 4/5, 64 Bit)
 #   ./ros2_installieren.sh            # ros-<distro>-ros-base (ohne Oberflächen, für den Pi)
 #   ./ros2_installieren.sh desktop    # mit RViz, rqt und turtlesim
 set -euo pipefail
@@ -19,10 +19,12 @@ sudo locale-gen de_DE.UTF-8 en_US.UTF-8
 sudo add-apt-repository -y universe
 
 # Paketquelle über das Paket ros2-apt-source (enthält Schlüssel und Quelle)
-VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest \
+QUELLE=ros-infrastructure/ros-apt-source
+VERSION=$(curl -s "https://api.github.com/repos/$QUELLE/releases/latest" \
   | grep -F '"tag_name"' | cut -d'"' -f4)
+DEB="ros2-apt-source_${VERSION}.${VERSION_CODENAME}_all.deb"
 curl -L -o /tmp/ros2-apt-source.deb \
-  "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${VERSION}/ros2-apt-source_${VERSION}.${VERSION_CODENAME}_all.deb"
+  "https://github.com/$QUELLE/releases/download/${VERSION}/$DEB"
 sudo dpkg -i /tmp/ros2-apt-source.deb
 
 sudo apt-get update

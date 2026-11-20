@@ -2,7 +2,7 @@
 
 Farbe und Tiefe kommen von zwei Topics mit eigenen Zeitstempeln. Der
 ApproximateTimeSynchronizer liefert Paare, deren Zeitstempel höchstens 'toleranz'
-auseinander liegen – nur dann gehört ein Pixel im Tiefenbild zum selben Moment wie das Farbbild.
+auseinander liegen – nur dann zeigen Tiefen- und Farbbild denselben Moment.
 
     ros2 run sh_kamera synchron
 """
@@ -50,6 +50,9 @@ def main(args=None):
         rclpy.spin(knoten)
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
+    except Exception:
+        if rclpy.ok():   # beim Beenden harmlos: der Kontext ist schon geschlossen
+            raise
     finally:
         try:
             knoten.destroy_node()

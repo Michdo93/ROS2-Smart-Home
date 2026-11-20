@@ -1,0 +1,19 @@
+# Kapitel 22: step-ca als Dienst auf dem Server
+#   sudo useradd --system --home /etc/step-ca step
+#   sudo cp step-ca.service /etc/systemd/system/
+#   sudo systemctl enable --now step-ca
+[Unit]
+Description=step-ca – Zertifizierungsstelle des Hauses
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=step
+Environment=STEPPATH=/etc/step-ca
+ExecStart=/usr/bin/step-ca /etc/step-ca/config/ca.json \
+  --password-file /etc/step-ca/passwort
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

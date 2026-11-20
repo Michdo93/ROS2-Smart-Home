@@ -17,8 +17,8 @@ class Bandbreite(Node):
         super().__init__("bandbreite")
         self.themen = self.declare_parameter("themen", ["/kinect_v1/rgb/image_raw"]).value
         self.sekunden = self.declare_parameter("sekunden", 5.0).value
-        # best effort passt zu jedem Publisher, verliert bei großen Bildern aber Nachrichten
-        # (Kapitel 18) – reliable misst ohne Verluste, passt aber nur zu reliable-Publishern
+        # best effort passt zu jedem Publisher, verliert bei großen Bildern Nachrichten
+        # (Kapitel 18) – reliable misst ohne Verluste, passt nur zu reliable-Publishern
         zuverlaessig = self.declare_parameter("reliable", False).value
         self.qos = QoSProfile(depth=5) if zuverlaessig else qos_profile_sensor_data
         self.zaehler = {t: [0, 0] for t in self.themen}   # Nachrichten, Bytes
@@ -61,6 +61,9 @@ def main(args=None):
         rclpy.spin(knoten)
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
+    except Exception:
+        if rclpy.ok():   # beim Beenden harmlos: der Kontext ist schon geschlossen
+            raise
     finally:
         try:
             knoten.destroy_node()

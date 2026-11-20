@@ -1,0 +1,19 @@
+# Kapitel 22: SROS2-Zertifikate eines ROS-2-Dienstes laufend erneuern
+#   sudo cp sros2-erneuern@.service /etc/systemd/system/
+#   echo ENCLAVES=/kinect_v1/driver | sudo tee /etc/ros2/erneuern-ros2-kinect.conf
+#   sudo systemctl enable --now sros2-erneuern@ros2-kinect
+[Unit]
+Description=SROS2-Zertifikate für %i erneuern
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Environment=STEPPATH=/home/pi/.step
+EnvironmentFile=/etc/ros2/erneuern-%i.conf
+ExecStart=/home/pi/ros2_ws/src/ROS2-Smart-Home/kapitel22_step_ca/erneuern.sh \
+  /home/pi/sros2_haus %i $ENCLAVES
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

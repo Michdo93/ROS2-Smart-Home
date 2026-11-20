@@ -1,5 +1,6 @@
 # Kapitel 20: Kinect-Treiber als Dienst auf dem Raspberry Pi
-#   sudo cp ros2-kinect.service /etc/systemd/system/ && sudo systemctl enable --now ros2-kinect
+#   sudo cp ros2-kinect.service /etc/systemd/system/
+#   sudo systemctl enable --now ros2-kinect
 [Unit]
 Description=ROS 2 Kinect v1 Treiber
 After=network-online.target
@@ -8,6 +9,8 @@ Wants=network-online.target
 [Service]
 User=pi
 EnvironmentFile=/etc/ros2/ros2-umgebung.conf
+# Enclave für SROS2 (Kapitel 21) – ohne ROS_SECURITY_ENABLE wirkungslos
+Environment=ROS_SECURITY_ENCLAVE_OVERRIDE=/kinect_v1/driver
 ExecStart=/bin/bash -c 'source /opt/ros/lyrical/setup.bash && \
   source /home/pi/ros2_ws/install/setup.bash && \
   exec ros2 launch kinect_v1_ros2 kinect_v1.launch.py'

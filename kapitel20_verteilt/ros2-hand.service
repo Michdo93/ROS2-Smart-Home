@@ -1,0 +1,20 @@
+# Kapitel 20: Handdetektor als Dienst auf dem Raspberry Pi (neben ros2-kinect)
+#   sudo cp ros2-hand.service /etc/systemd/system/
+#   sudo systemctl enable --now ros2-hand
+[Unit]
+Description=ROS 2 Handdetektor
+After=network-online.target ros2-kinect.service
+Wants=network-online.target
+
+[Service]
+User=pi
+EnvironmentFile=/etc/ros2/ros2-umgebung.conf
+Environment=ROS_SECURITY_ENCLAVE_OVERRIDE=/hand_detektor
+ExecStart=/bin/bash -c 'source /opt/ros/lyrical/setup.bash && \
+  source /home/pi/ros2_ws/install/setup.bash && \
+  exec ros2 run sh_hand hand_detektor'
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

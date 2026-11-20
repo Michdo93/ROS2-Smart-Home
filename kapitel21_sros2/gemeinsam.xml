@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Kapitel 21: was jeder Knoten braucht – Log, Parameter-Ereignisse, eigene Parameter -->
+<!-- Kapitel 21: was jeder Knoten braucht – Log, Parameter, Parameter-Ereignisse -->
 <profile>
   <topics publish="ALLOW">
     <topic>/rosout</topic>

@@ -57,8 +57,9 @@ Für Home Assistant liegt in `homeassistant/` ein Paket (`packages:` in der `con
 | 14 | `src/sh_szenarien/` | Roboter und Haus in beide Richtungen, Kontrollgang als Action |
 | 15, 16, 18 | `src/sh_kamera/` | Bilder in NumPy umwandeln, Tag/Nacht-Umschaltung der Kinect über openHAB, Abstand, Synchronisieren, Punktwolke, Bandbreite messen, JPEG-Kompression, Bewegungserkennung, Vergleich mit ZeroMQ, viele Anwendungen an einer Kamera |
 | 19 | `src/sh_hand/` | Projekt „Hand erkannt“: Kinect → ROS 2 → openHAB oder Home Assistant |
-| 20 | `kapitel20_verteilt/` | gemeinsame Umgebung, systemd-Dienste für Pi und Brücke |
-| 21 | `kapitel21_sros2/` | Schlüsselspeicher, Enclaves, Richtlinie für „Hand erkannt“ |
+| 20 | `kapitel20_verteilt/` | zwei Rechner auf einem simulieren, gemeinsame Umgebung, Brücke für das ganze Haus, systemd-Dienste für Kinect, Detektor und Brücke |
+| 21 | `kapitel21_sros2/` | Schlüsselspeicher, Enclaves, Richtlinie für „Hand erkannt“, Schlüssel verteilen, Zertifikat sperren |
+| 22 | `kapitel22_step_ca/` | step-ca als Dienst, Identitäten mit Einmal-Token, automatisches Erneuern |
 | – | `openhab-conf/` | Items, Things, Regeln, Sitemaps und Transformationen, die die Beispiele voraussetzen |
 
 ## Schnellstart ohne Hardware

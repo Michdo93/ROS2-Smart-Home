@@ -13,7 +13,7 @@ if [ "$ROLLE" = bruecke ]; then
     install -m 600 /dev/null /etc/ros2/openhab-token.conf
     echo "OPENHAB_TOKEN=$TOKEN" > /etc/ros2/openhab-token.conf
   fi
-  install -m 644 "$DIR/../kapitel11_bruecke/bruecke_gruppe.yaml" /etc/ros2/bruecke.yaml
+  install -m 644 "$DIR/bruecke_haus.yaml" /etc/ros2/bruecke.yaml
 fi
 install -m 644 "$DIR/ros2-$ROLLE.service" /etc/systemd/system/
 systemctl daemon-reload

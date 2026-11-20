@@ -84,6 +84,9 @@ def main(args=None):
         rclpy.spin(knoten, executor=MultiThreadedExecutor())
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
+    except Exception:
+        if rclpy.ok():   # beim Beenden harmlos: der Kontext ist schon geschlossen
+            raise
     finally:
         try:
             knoten.destroy_node()

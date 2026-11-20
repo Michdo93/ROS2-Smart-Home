@@ -29,7 +29,7 @@ class TagNacht(Node):
     def licht(self, m):
         if m.is_null:
             return
-        modus = "rgb" if m.has_number and m.number > 0 else "ir"   # Dimmer > 0 zählt als an
+        modus = "rgb" if m.has_number and m.number > 0 else "ir"   # Dimmer > 0: an
         if modus == self.modus:
             return
         if not self.kinect.wait_for_services(timeout_sec=2.0):
@@ -50,6 +50,9 @@ def main(args=None):
         rclpy.spin(knoten)
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
+    except Exception:
+        if rclpy.ok():   # beim Beenden harmlos: der Kontext ist schon geschlossen
+            raise
     finally:
         try:
             knoten.destroy_node()

@@ -1,0 +1,9 @@
+# Kapitel 20: Brücke für das ganze Haus – alle Items der Gruppe gROS
+#   und die Meldung des Handdetektors vom Raspberry Pi im Flur
+openhab_bridge:
+  ros__parameters:
+    items: [""]
+    groups: ["gROS"]
+    tags: [""]
+    publish_value: true
+    ros_inputs: ["/hand_erkannt|std_msgs/msg/Bool|Flur_Hand|update"]
