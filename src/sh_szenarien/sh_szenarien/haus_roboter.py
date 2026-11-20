@@ -65,9 +65,11 @@ class HausRoboter(Node):
         self.an_openhab.publish(msg)
 
     def melden(self):
-        if self.pose is None:
+        # erst melden, wenn die Brücke zuhört – sonst gehen Meldungen verloren
+        if self.pose is None or self.an_openhab.get_subscription_count() == 0:
             return
-        werte = {"Roboter_X": f"{self.pose.x:.1f} m",
+        werte = {"Roboter_Raum": self.raum or "unterwegs",
+                 "Roboter_X": f"{self.pose.x:.1f} m",
                  "Roboter_Y": f"{self.pose.y:.1f} m",
                  "Roboter_Akku": f"{self.akku:.0f} %",
                  "Roboter_Status": self.status()}
@@ -83,7 +85,6 @@ class HausRoboter(Node):
 
     def raum_gewechselt(self, neu):
         alt, self.raum = self.raum, neu
-        self.an("Roboter_Raum", neu or "unterwegs")
         if alt in LICHT:
             self.an(LICHT[alt], "OFF", update=False)    # Befehl: Licht aus
         if neu in LICHT:
@@ -126,5 +127,8 @@ def main(args=None):
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
-        knoten.destroy_node()
-        rclpy.try_shutdown()
+        try:
+            knoten.destroy_node()
+            rclpy.try_shutdown()
+        except KeyboardInterrupt:   # zweites Strg+C beim Beenden
+            pass

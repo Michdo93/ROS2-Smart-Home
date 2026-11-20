@@ -22,8 +22,9 @@ FAELLE = [
     ("Wohnzimmer_Farblampe_Farbe", "120,100,50", "command"),  # HSBType
     ("Wohnzimmer_Farblampe_Farbe", "30", "command"),          # PercentType
     ("Wohnzimmer_Farblampe_Farbe", "OFF", "command"),
+    ("Wohnzimmer_Fenster_Kontakt", "CLOSED", "update"),       # OpenClosedType
     ("Wohnzimmer_Fenster_Kontakt", "OPEN", "command"),        # Contact: kein Befehl
-    ("Wohnzimmer_Fenster_Kontakt", "OPEN", "update"),         # OpenClosedType
+    ("Wohnzimmer_Fenster_Kontakt", "OPEN", "update"),
     ("Wohnzimmer_Fernseher_Kanal", "7", "command"),        # DecimalType, ganz
     ("Technik_Waermepumpe_COP", "3.75", "update"),            # DecimalType, Komma
     ("Wohnzimmer_Thermostat_Soll", "21.5", "command"),        # ohne Einheit
@@ -41,8 +42,8 @@ FAELLE = [
     ("Kueche_Backofen_Modus", "Grill", "command"),            # StringType
     ("Kueche_Backofen_Ende", "2026-11-20T18:30:00", "command"),  # DateTime
     ("Garage_Auto_Position", "48.051,8.207,860", "command"),  # PointType
-    ("Diele_Klingel_Anruf", "Wohnung,Haustür", "command"),    # Call: kein Befehl
     ("Diele_Klingel_Anruf", "Wohnung,Haustür", "update"),     # StringListType
+    ("Diele_Klingel_Anruf", "Wohnung,Garten", "command"),     # Call: kein Befehl
     ("gVH_Lichter", "OFF", "command"),                        # an alle Mitglieder
     ("Haus_Saugroboter_Karte", None, None),                   # Image: nur lesen
 ]

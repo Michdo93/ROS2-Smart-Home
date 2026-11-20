@@ -52,5 +52,8 @@ def main(args=None):
     except (KeyboardInterrupt, ExternalShutdownException):
         pass
     finally:
-        knoten.destroy_node()
-        rclpy.try_shutdown()
+        try:
+            knoten.destroy_node()
+            rclpy.try_shutdown()
+        except KeyboardInterrupt:   # zweites Strg+C beim Beenden
+            pass
