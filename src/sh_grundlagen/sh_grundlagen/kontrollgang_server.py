@@ -1,4 +1,4 @@
-"""Kapitel 5: Action-Server – ein (simulierter) Roboter fährt Räume ab.
+"""Kapitel 6: Action-Server – ein (simulierter) Roboter fährt Räume ab.
 
 Jeder Raum dauert zwei Sekunden; Rückmeldung nach jedem Raum, abbrechbar.
 

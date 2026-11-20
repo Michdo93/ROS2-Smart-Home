@@ -1,4 +1,4 @@
-# Kapitel 5 und 12: Action – ein Roboter fährt nacheinander Räume ab
+# Kapitel 6 und 12: Action – ein Roboter fährt nacheinander Räume ab
 string[] raeume         # Ziel: Liste der Räume
 ---
 uint32 besucht          # Ergebnis: Anzahl erreichter Räume

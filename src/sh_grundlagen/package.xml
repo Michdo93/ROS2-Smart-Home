@@ -3,7 +3,7 @@
 <package format="3">
   <name>sh_grundlagen</name>
   <version>1.0.0</version>
-  <description>Kapitel 4 bis 7: Knoten, Topics, Services, Actions, Parameter, QoS, Launch</description>
+  <description>Kapitel 5 bis 7: Knoten, Topics, Services, Actions, Parameter, QoS, Launch</description>
   <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>

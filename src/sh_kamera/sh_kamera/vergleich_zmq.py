@@ -1,4 +1,4 @@
-"""Kapitel 16: ROS 2 und ZeroMQ im Vergleich – Latenz von Kamerabildern (640x480 RGB).
+"""Kapitel 18: ROS 2 und ZeroMQ im Vergleich – Latenz von Kamerabildern (640x480 RGB).
 
 Ein Sender-Prozess schickt 300 Bilder mit 30 Hz, der Empfänger misst die Zeit vom Senden
 bis zum Empfang. Beide laufen auf demselben Rechner – im Netz kommt die Übertragung dazu.

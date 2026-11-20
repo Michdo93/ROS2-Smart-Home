@@ -1,4 +1,4 @@
-"""Kapitel 5: Action-Client – startet einen Kontrollgang und zeigt die Rückmeldungen.
+"""Kapitel 6: Action-Client – startet einen Kontrollgang und zeigt die Rückmeldungen.
 
     ros2 run sh_grundlagen kontrollgang_client flur kueche wohnzimmer
 """

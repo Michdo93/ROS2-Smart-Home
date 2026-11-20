@@ -1,4 +1,4 @@
-"""Kapitel 17: Handerkennung im Tiefenbild – nur numpy, ohne ROS testbar.
+"""Kapitel 19: Handerkennung im Tiefenbild – nur numpy, ohne ROS testbar.
 
 Idee: Eine erhobene Hand ist eine kleine Fläche, die deutlich vor dem Körper liegt.
 1. Gültige Tiefenwerte zwischen 0,5 und 4 m.

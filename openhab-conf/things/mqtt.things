@@ -1,0 +1,23 @@
+// Kapitel 2: openHAB <-> MQTT <-> ROS 2
+// dieselben MQTT-Topics wie bei Home Assistant
+Bridge mqtt:broker:mosquitto "Mosquitto"
+        [ host="localhost", port=1883, clientID="openhab" ] {
+    Thing topic ros2 "ROS 2 über MQTT" {
+    Channels:
+        // Zustand openHAB -> ROS 2: jeder Befehl an das Item wird veröffentlicht
+        Type number : solltemperatur "Solltemperatur" [
+            commandTopic="smarthome/solltemperatur", retained=true, formatBeforePublish="%.1f" ]
+        // Befehl openHAB -> ROS 2: MAP macht aus "vor" eine Twist-Nachricht
+        Type string : fahren "Schildkröte fahren" [
+            commandTopic="smarthome/schildkroete/fahren",
+            transformationPatternOut="MAP:schildkroete.map" ]
+        // Zustand ROS 2 -> openHAB: Feld x bzw. y aus dem JSON
+        Type number : x "Schildkröte x" [ stateTopic="ros/schildkroete/position",
+            transformationPattern="JSONPATH:$.x" ]
+        Type number : y "Schildkröte y" [ stateTopic="ros/schildkroete/position",
+            transformationPattern="JSONPATH:$.y" ]
+        // Befehl ROS 2 -> openHAB: postCommand macht aus der Nachricht einen Befehl
+        Type switch : flurlicht "Flurlicht" [ stateTopic="ros/flurlicht/befehl",
+            postCommand=true ]
+    }
+}

@@ -1,4 +1,4 @@
-"""Kapitel 4: Subscriber – meldet, wenn in einem Raum gelüftet werden sollte.
+"""Kapitel 5: Subscriber – meldet, wenn in einem Raum gelüftet werden sollte.
 
     ros2 run sh_grundlagen raumklima_empfaenger --ros-args -p grenze:=1000
 """

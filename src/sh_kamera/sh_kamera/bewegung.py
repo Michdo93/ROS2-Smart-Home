@@ -1,4 +1,4 @@
-"""Kapitel 16: zweite Anwendung am selben Kamerabild – einfache Bewegungserkennung.
+"""Kapitel 18: zweite Anwendung am selben Kamerabild – einfache Bewegungserkennung.
 
 Vergleicht jedes fünfte Bild mit dem vorigen; meldet /bewegung (std_msgs/Bool).
 

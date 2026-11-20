@@ -1,0 +1,28 @@
+# Kapitel 19: Hand erkannt – ROS 2 meldet, Home Assistant entscheidet.
+# In configuration.yaml einbinden:   homeassistant:
+#                                       packages:
+#                                         hand: !include hand.yaml
+
+input_boolean:
+  flur_licht:                      # das Licht, das die Hand schaltet
+    name: Flur Licht
+
+mqtt:
+  binary_sensor:
+    - name: "Flur Hand"            # Beobachtung aus ROS 2
+      unique_id: flur_hand
+      state_topic: "ros/flur/hand"
+      payload_on: "true"
+      payload_off: "false"
+
+automation:
+  - alias: "Hand erkannt schaltet das Flurlicht um"
+    triggers:
+      - trigger: state
+        entity_id: binary_sensor.flur_hand
+        from: "off"
+        to: "on"
+    actions:
+      - action: input_boolean.toggle
+        target:
+          entity_id: input_boolean.flur_licht

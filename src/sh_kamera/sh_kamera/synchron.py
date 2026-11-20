@@ -1,4 +1,4 @@
-"""Kapitel 13: Farb- und Tiefenbild zeitlich zusammenführen (message_filters).
+"""Kapitel 15: Farb- und Tiefenbild zeitlich zusammenführen (message_filters).
 
 Farbe und Tiefe kommen von zwei Topics mit eigenen Zeitstempeln. Der
 ApproximateTimeSynchronizer liefert Paare, deren Zeitstempel höchstens 'toleranz'

@@ -1,0 +1,2 @@
+vor={"linear": {"x": 2.0}, "angular": {"z": 0.0}}
+links={"linear": {"x": 0.0}, "angular": {"z": 1.57}}

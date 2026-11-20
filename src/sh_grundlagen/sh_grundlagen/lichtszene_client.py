@@ -1,4 +1,4 @@
-"""Kapitel 5: Service-Client – ruft eine Lichtszene auf und wartet auf die Antwort.
+"""Kapitel 6: Service-Client – ruft eine Lichtszene auf und wartet auf die Antwort.
 
     ros2 run sh_grundlagen lichtszene_client wohnzimmer kino
 """

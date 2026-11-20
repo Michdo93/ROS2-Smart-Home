@@ -18,10 +18,11 @@ setup(
     zip_safe=True,
     maintainer="Michael Christian Dörflinger",
     maintainer_email="michdo93@users.noreply.github.com",
-    description="Kapitel 12: Szenarien mit der openHAB-Brücke",
+    description="Kapitel 13 und 14: Szenarien, Roboter und Haus mit der openHAB-Brücke",
     license="MIT",
     entry_points={"console_scripts": [
         "turtle_kontrollgang = sh_szenarien.turtle_kontrollgang:main",
         "openhab_kontrollgang = sh_szenarien.openhab_kontrollgang:main",
+        "haus_roboter = sh_szenarien.haus_roboter:main",
     ]},
 )

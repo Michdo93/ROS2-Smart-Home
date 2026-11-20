@@ -1,0 +1,59 @@
+# Kapitel 2: Home Assistant <-> MQTT <-> ROS 2
+# In configuration.yaml einbinden:   homeassistant:
+#                                       packages:
+#                                         ros2: !include ros2_mqtt.yaml
+# Die MQTT-Integration (Broker) wird vorher in der Oberfläche eingerichtet.
+
+input_number:                      # ein Zustand, den Home Assistant an ROS 2 meldet
+  solltemperatur:
+    name: Solltemperatur
+    min: 16
+    max: 26
+    step: 0.5
+    unit_of_measurement: "°C"
+
+input_boolean:                     # ein Gerät, das ROS 2 per Befehl schaltet
+  flurlicht:
+    name: Flurlicht
+
+mqtt:
+  button:                          # Befehle an ROS 2: Twist-Nachrichten als JSON
+    - name: "Schildkröte vorwärts"
+      unique_id: schildkroete_vorwaerts
+      command_topic: "smarthome/schildkroete/fahren"
+      payload_press: '{"linear": {"x": 2.0}, "angular": {"z": 0.0}}'
+    - name: "Schildkröte links"
+      unique_id: schildkroete_links
+      command_topic: "smarthome/schildkroete/fahren"
+      payload_press: '{"linear": {"x": 0.0}, "angular": {"z": 1.57}}'
+  sensor:                          # Zustände aus ROS 2
+    - name: "Schildkröte x"
+      unique_id: schildkroete_x
+      state_topic: "ros/schildkroete/position"
+      value_template: "{{ value_json.x | round(2) }}"
+      unit_of_measurement: "m"
+    - name: "Schildkröte y"
+      unique_id: schildkroete_y
+      state_topic: "ros/schildkroete/position"
+      value_template: "{{ value_json.y | round(2) }}"
+      unit_of_measurement: "m"
+
+automation:
+  - alias: "Solltemperatur an ROS 2 melden"
+    triggers:
+      - trigger: state
+        entity_id: input_number.solltemperatur
+    actions:
+      - action: mqtt.publish
+        data:
+          topic: "smarthome/solltemperatur"
+          payload: "{{ states('input_number.solltemperatur') }}"
+          retain: true
+  - alias: "Befehl aus ROS 2 schaltet das Flurlicht"
+    triggers:
+      - trigger: mqtt
+        topic: "ros/flurlicht/befehl"
+    actions:
+      - action: "input_boolean.turn_{{ 'on' if trigger.payload == 'ON' else 'off' }}"
+        target:
+          entity_id: input_boolean.flurlicht

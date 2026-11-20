@@ -1,0 +1,46 @@
+# Kapitel 2: Welche ROS-Topics mit welchen MQTT-Topics verbunden werden.
+# Dieselbe Datei passt für Home Assistant und für openHAB – beide benutzen
+# dieselben MQTT-Topics (homeassistant/ros2_mqtt.yaml,
+# openhab-conf/things/mqtt.things).
+/**/*:
+  ros__parameters:
+    broker:
+      host: localhost
+      port: 1883
+      tls:
+        enabled: false
+    client:
+      id: ros2_smarthome
+      clean_session: true
+      keep_alive_interval: 60.0
+      max_inflight: 10
+    bridge:
+      ros2mqtt:                              # ROS 2 -> MQTT
+        ros_topics:
+          - /schildkroete/position
+          - /haus/flurlicht/befehl
+        /schildkroete/position:              # Zustand: Position als JSON
+          mqtt_topic: ros/schildkroete/position
+          ros_type: geometry_msgs/msg/Point
+          json: true
+        /haus/flurlicht/befehl:              # Befehl: "ON" oder "OFF" als Text
+          mqtt_topic: ros/flurlicht/befehl
+          ros_type: std_msgs/msg/String
+          primitive: true
+      mqtt2ros:                              # MQTT -> ROS 2
+        mqtt_topics:
+          - smarthome/solltemperatur
+          - smarthome/schildkroete/fahren
+        smarthome/solltemperatur:            # Zustand: "21.5" wird zu Float64
+          ros_topic: /haus/solltemperatur
+          ros_type: std_msgs/msg/Float64
+          primitive: true
+          advanced:
+            ros:
+              qos:
+                durability: transient_local  # wer später startet, bekommt den Wert
+                reliability: reliable
+        smarthome/schildkroete/fahren:       # Befehl: JSON wird zur Twist-Nachricht
+          ros_topic: /turtle1/cmd_vel
+          ros_type: geometry_msgs/msg/Twist
+          json: true

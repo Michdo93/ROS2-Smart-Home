@@ -19,7 +19,8 @@ jobs:
           apt-get install -y git python3-pip python3-pytest python3-numpy \
             python3-opencv python3-zmq \
             ros-${{ matrix.distro }}-tf2-ros ros-${{ matrix.distro }}-turtlesim \
-            ros-${{ matrix.distro }}-diagnostic-msgs
+            ros-${{ matrix.distro }}-diagnostic-msgs ros-${{ matrix.distro }}-mqtt-client \
+            mosquitto mosquitto-clients
           pip3 install --break-system-packages python-openhab-rest-client
           cd src
           git clone --depth 1 https://github.com/Michdo93/ros2_openhab_ws.git
@@ -33,7 +34,7 @@ jobs:
       - name: Tests
         shell: bash
         run: cd src/ROS2-Smart-Home/src/sh_hand && python3 -m pytest -q test
-      - name: Kapitel 6 (QoS) und 17 (Hand erkannt, Simulation)
+      - name: Kapitel 7 (QoS) und 19 (Hand erkannt, Simulation, über MQTT)
         shell: bash
         run: |
           source install/setup.bash
@@ -43,4 +44,8 @@ jobs:
           timeout -k 5 40 ros2 run sh_hand hand_detektor &
           sleep 8
           timeout -k 5 35 ros2 topic echo --once /hand_erkannt --qos-durability transient_local
-          kill %1 %2 2>/dev/null || true
+          mosquitto -d -p 1883
+          timeout -k 5 30 ros2 run mqtt_client mqtt_client --ros-args \
+            --params-file src/ROS2-Smart-Home/src/sh_hand/config/mqtt_hand.yaml &
+          timeout -k 5 25 mosquitto_sub -v -t ros/flur/hand -C 1
+          kill %1 %2 %3 2>/dev/null || true

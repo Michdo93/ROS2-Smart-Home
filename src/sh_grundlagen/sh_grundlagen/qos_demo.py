@@ -1,4 +1,4 @@
-"""Kapitel 6: QoS – wer zu spät abonniert, bekommt den letzten Zustand
+"""Kapitel 7: QoS – wer zu spät abonniert, bekommt den letzten Zustand
 nur mit "transient local".
 
     ros2 run sh_grundlagen qos_demo

@@ -1,4 +1,4 @@
-"""Kapitel 12: openHAB-Schalter -> Action -> turtlesim-Roboter.
+"""Kapitel 14: openHAB-Schalter -> Action -> turtlesim-Roboter.
 
     ros2 launch sh_szenarien kontrollgang.launch.py
 OPENHAB_URL und OPENHAB_TOKEN müssen gesetzt sein.

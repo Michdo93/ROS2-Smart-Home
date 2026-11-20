@@ -1,4 +1,4 @@
-"""Kapitel 13: Punktwolke lesen – wo ist der nächste Punkt vor der Kamera?
+"""Kapitel 15: Punktwolke lesen – wo ist der nächste Punkt vor der Kamera?
 
     ros2 run sh_kamera punktwolke
 """

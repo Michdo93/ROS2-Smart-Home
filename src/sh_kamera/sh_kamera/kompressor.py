@@ -1,4 +1,4 @@
-"""Kapitel 16: Rohbild -> JPEG (sensor_msgs/CompressedImage) – spart über 90 % Datenrate.
+"""Kapitel 18: Rohbild -> JPEG (sensor_msgs/CompressedImage) – spart über 90 % Datenrate.
 
 Entspricht dem compressed-Transport von image_transport, ohne C++-Plugins.
 
@@ -25,7 +25,7 @@ class Kompressor(Node):
     def bild(self, m):
         if m.encoding not in ("rgb8", "bgr8", "mono8"):
             return
-        pixel = bild_zu_array(m)                          # Kapitel 13
+        pixel = bild_zu_array(m)                          # Kapitel 15
         if m.encoding == "rgb8":
             pixel = pixel[..., ::-1]                      # OpenCV erwartet BGR
         ok, jpeg = cv2.imencode(".jpg", pixel, [cv2.IMWRITE_JPEG_QUALITY, self.qualitaet])

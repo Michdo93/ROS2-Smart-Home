@@ -1,4 +1,4 @@
-"""Kapitel 13: Tiefenbild auswerten – wie weit ist das Nächste in der Bildmitte entfernt?
+"""Kapitel 15: Tiefenbild auswerten – wie weit ist das Nächste in der Bildmitte entfernt?
 
     ros2 run sh_kamera abstand --ros-args -p tiefe:=/kinect_v1/depth/image_raw
 """

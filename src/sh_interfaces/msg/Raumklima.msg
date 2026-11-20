@@ -1,4 +1,4 @@
-# Kapitel 4: eigene Nachricht – Messwerte eines Raums
+# Kapitel 5: eigene Nachricht – Messwerte eines Raums
 std_msgs/Header header
 string raum
 float32 temperatur      # °C

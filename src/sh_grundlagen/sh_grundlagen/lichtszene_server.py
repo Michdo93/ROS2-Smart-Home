@@ -1,6 +1,6 @@
-"""Kapitel 5: Service-Server – schaltet eine Lichtszene.
+"""Kapitel 6: Service-Server – schaltet eine Lichtszene.
 
-Die Befehle gehen auf die Topics der openHAB-Brücke (Kapitel 10). Läuft keine Brücke,
+Die Befehle gehen auf die Topics der openHAB-Brücke (Kapitel 11). Läuft keine Brücke,
 sieht man sie mit: ros2 topic echo /openhab/items/Wohnzimmer_Licht/command
 
     ros2 run sh_grundlagen lichtszene_server

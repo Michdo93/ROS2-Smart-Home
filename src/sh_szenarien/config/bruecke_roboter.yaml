@@ -1,0 +1,9 @@
+# Kapitel 14: Brücke für Roboter und Haus
+#   Zustände nach ROS 2: Ziel aus openHAB, Anwesenheit aus dem virtuellen Haus.
+#   Befehle und Updates des Roboters gehen über /openhab/command – dafür muss ein
+#   Item nicht in dieser Liste stehen.
+openhab_bridge:
+  ros__parameters:
+    items: ["Roboter_Ziel", "Diele_Praesenz", "Wohnzimmer_Deckenlampe_Schalter"]
+    groups: [""]
+    tags: [""]

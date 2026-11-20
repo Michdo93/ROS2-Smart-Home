@@ -1,0 +1,11 @@
+// Kapitel 2: Items für das MQTT-Beispiel (Thing in things/mqtt.things)
+Number:Temperature MQTT_Solltemperatur "Solltemperatur [%.1f °C]"
+    { channel="mqtt:topic:mosquitto:ros2:solltemperatur", unit="°C" }
+String MQTT_Schildkroete_Fahren "Schildkröte fahren"
+    { channel="mqtt:topic:mosquitto:ros2:fahren" }
+Number:Length MQTT_Schildkroete_X "Schildkröte x [%.2f m]"
+    { channel="mqtt:topic:mosquitto:ros2:x", unit="m" }
+Number:Length MQTT_Schildkroete_Y "Schildkröte y [%.2f m]"
+    { channel="mqtt:topic:mosquitto:ros2:y", unit="m" }
+Switch MQTT_Flurlicht "Flurlicht"
+    { channel="mqtt:topic:mosquitto:ros2:flurlicht" }

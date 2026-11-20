@@ -19,7 +19,7 @@ setup(
     zip_safe=True,
     maintainer="Michael Christian Dörflinger",
     maintainer_email="michdo93@users.noreply.github.com",
-    description="Kapitel 4 bis 7: Knoten, Topics, Services, Actions, QoS, Launch",
+    description="Kapitel 5 bis 7: Knoten, Topics, Services, Actions, QoS, Launch",
     license="MIT",
     entry_points={"console_scripts": [f"{k} = {paket}.{k}:main" for k in knoten]},
 )

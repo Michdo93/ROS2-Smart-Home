@@ -1,4 +1,4 @@
-// Kapitel 4: Subscriber in C++ – meldet, wenn gelüftet werden sollte
+// Kapitel 5: Subscriber in C++ – meldet, wenn gelüftet werden sollte
 //   ros2 run sh_grundlagen_cpp raumklima_empfaenger --ros-args -p grenze:=1000
 #include <rclcpp/rclcpp.hpp>
 #include <sh_interfaces/msg/raumklima.hpp>

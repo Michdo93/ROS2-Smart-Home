@@ -1,4 +1,4 @@
-// Kapitel 17: ROS 2 meldet "Hand erkannt" (Flur_Hand), openHAB entscheidet, was passiert
+// Kapitel 19: ROS 2 meldet "Hand erkannt" (Flur_Hand), openHAB entscheidet, was passiert
 rule "Hand erkannt schaltet das Flurlicht um"
 when
     Item Flur_Hand changed to ON

@@ -1,4 +1,4 @@
-"""Kapitel 13: Tests für die Umwandlung Image <-> NumPy."""
+"""Kapitel 15: Tests für die Umwandlung Image <-> NumPy."""
 import numpy as np
 from sensor_msgs.msg import Image
 

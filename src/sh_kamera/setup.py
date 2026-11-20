@@ -17,7 +17,7 @@ setup(
     zip_safe=True,
     maintainer="Michael Christian Dörflinger",
     maintainer_email="michdo93@users.noreply.github.com",
-    description="Kapitel 13 und 16: Kamerabilder messen, komprimieren, teilen",
+    description="Kapitel 15 und 16: Kamerabilder messen, komprimieren, teilen",
     license="MIT",
     entry_points={"console_scripts": [
         "bandbreite = sh_kamera.bandbreite:main",

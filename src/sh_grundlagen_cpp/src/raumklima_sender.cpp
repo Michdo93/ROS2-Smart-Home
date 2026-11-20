@@ -1,4 +1,4 @@
-// Kapitel 4: derselbe Raumsensor in C++ (rclcpp)
+// Kapitel 5: derselbe Raumsensor in C++ (rclcpp)
 //   ros2 run sh_grundlagen_cpp raumklima_sender --ros-args -p raum:=kueche
 #include <chrono>
 #include <cmath>

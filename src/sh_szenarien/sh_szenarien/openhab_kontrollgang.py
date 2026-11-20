@@ -1,4 +1,4 @@
-"""Kapitel 12: ein Schalter in openHAB startet eine ROS-2-Action.
+"""Kapitel 14: ein Schalter in openHAB startet eine ROS-2-Action.
 
 Roboter_Kontrollgang ON  ->  Action /kontrollgang  ->  Rückmeldungen in Roboter_Status
 Am Ende schaltet der Knoten Roboter_Kontrollgang wieder auf OFF; OFF während der Fahrt

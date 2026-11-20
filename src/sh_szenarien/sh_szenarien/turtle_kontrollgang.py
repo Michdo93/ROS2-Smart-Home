@@ -1,4 +1,4 @@
-"""Kapitel 12: Action-Server mit "echtem" Roboter – die turtlesim-Schildkröte
+"""Kapitel 14: Action-Server mit "echtem" Roboter – die turtlesim-Schildkröte
 fährt die Räume ab.
 
     ros2 run turtlesim turtlesim_node

@@ -1,4 +1,4 @@
-"""Kapitel 13: sensor_msgs/Image in ein NumPy-Array umwandeln und zurück – ohne cv_bridge.
+"""Kapitel 15: sensor_msgs/Image in ein NumPy-Array umwandeln und zurück – ohne cv_bridge.
 
 Die Zeilenlänge 'step' kann größer sein als Breite x Bytes pro Pixel (Auffüllbytes am
 Zeilenende). Darum erst Zeilen bilden, dann auf die Breite zuschneiden.

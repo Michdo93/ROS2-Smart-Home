@@ -1,4 +1,4 @@
-"""Kapitel 14: Tag und Nacht – das Licht in openHAB schaltet die Kinect v1 auf RGB oder IR.
+"""Kapitel 16: Tag und Nacht – das Licht in openHAB schaltet die Kinect v1 auf RGB oder IR.
 
 Ist das Licht aus, ist es dunkel: Die Kinect liefert dann das Infrarotbild, das ihr eigener
 Laser beleuchtet. Geht das Licht an, schaltet sie zurück auf das Farbbild.

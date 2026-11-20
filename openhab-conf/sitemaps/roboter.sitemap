@@ -1,0 +1,16 @@
+sitemap roboter label="Roboter und Haus" {
+    Frame label="Auftrag" {
+        Selection item=Roboter_Ziel mappings=[kueche="Küche", wohnzimmer="Wohnzimmer",
+            schlafzimmer="Schlafzimmer", bad="Bad", flur="Flur"]
+        Switch item=Roboter_Kontrollgang
+    }
+    Frame label="Zustand" {
+        Text item=Roboter_Status
+        Text item=Roboter_Raum
+        Text item=Roboter_X
+        Text item=Roboter_Y
+        Text item=Roboter_Akku
+        Text item=Diele_Praesenz
+        Switch item=Wohnzimmer_Deckenlampe_Schalter
+    }
+}

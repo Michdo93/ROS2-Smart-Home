@@ -1,4 +1,4 @@
-# Kapitel 5: Service – eine Lichtszene in einem Raum aktivieren
+# Kapitel 6: Service – eine Lichtszene in einem Raum aktivieren
 string raum
 string szene            # z. B. lesen, kino, aus
 ---

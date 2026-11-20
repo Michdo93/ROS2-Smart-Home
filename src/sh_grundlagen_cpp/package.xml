@@ -3,7 +3,7 @@
 <package format="3">
   <name>sh_grundlagen_cpp</name>
   <version>1.0.0</version>
-  <description>Kapitel 4: Publisher und Subscriber in C++</description>
+  <description>Kapitel 5: Publisher und Subscriber in C++</description>
   <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
   <license>MIT</license>
   <buildtool_depend>ament_cmake</buildtool_depend>

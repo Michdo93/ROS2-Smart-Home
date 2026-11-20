@@ -3,7 +3,7 @@
 <package format="3">
   <name>sh_szenarien</name>
   <version>1.0.0</version>
-  <description>Kapitel 12: Szenarien mit der openHAB-Brücke</description>
+  <description>Kapitel 13 und 14: Szenarien, Roboter und Haus mit der openHAB-Brücke</description>
   <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>

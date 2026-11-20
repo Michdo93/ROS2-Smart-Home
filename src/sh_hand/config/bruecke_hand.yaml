@@ -1,4 +1,4 @@
-# Kapitel 17: openHAB-Brücke für "Hand erkannt"
+# Kapitel 19: openHAB-Brücke für "Hand erkannt"
 #   ROS 2 meldet nur, was es sieht (Item Flur_Hand) – was daraus folgt, entscheidet eine
 #   Regel in openHAB (openhab-conf/rules/hand.rules).
 openhab_bridge:

@@ -1,4 +1,4 @@
-"""Kapitel 13 und 16: Bildrate und Datenrate beliebiger Topics messen.
+"""Kapitel 15 und 16: Bildrate und Datenrate beliebiger Topics messen.
 
     ros2 run sh_kamera bandbreite --ros-args \
         -p themen:="[/kinect_v1/rgb/image_raw, /kinect_v1/depth/image_raw]" -p sekunden:=5.0
@@ -18,7 +18,7 @@ class Bandbreite(Node):
         self.themen = self.declare_parameter("themen", ["/kinect_v1/rgb/image_raw"]).value
         self.sekunden = self.declare_parameter("sekunden", 5.0).value
         # best effort passt zu jedem Publisher, verliert bei großen Bildern aber Nachrichten
-        # (Kapitel 16) – reliable misst ohne Verluste, passt aber nur zu reliable-Publishern
+        # (Kapitel 18) – reliable misst ohne Verluste, passt aber nur zu reliable-Publishern
         zuverlaessig = self.declare_parameter("reliable", False).value
         self.qos = QoSProfile(depth=5) if zuverlaessig else qos_profile_sensor_data
         self.zaehler = {t: [0, 0] for t in self.themen}   # Nachrichten, Bytes

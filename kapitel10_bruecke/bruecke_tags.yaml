@@ -1,7 +1,0 @@
-# Kapitel 10: alle Lampen (semantisches Tag Lightbulb), eigener Namensraum
-openhab_bridge:
-  ros__parameters:
-    items: [""]
-    groups: [""]
-    tags: ["Lightbulb"]
-    namespace: haus

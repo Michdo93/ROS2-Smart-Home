@@ -1,7 +1,0 @@
-# Kapitel 10: alle Mitglieder der Gruppe gROS – neue Items nur in openHAB eintragen
-openhab_bridge:
-  ros__parameters:
-    items: [""]
-    groups: ["gROS"]
-    tags: [""]
-    publish_value: true

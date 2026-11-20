@@ -9,3 +9,10 @@ Rollershutter Kueche_Rollladen "Rollladen Küche"       (gROS)
 Number:Temperature Wohnzimmer_Temperatur "Temperatur [%.1f °C]" (gROS)
 String Roboter_Status      "Roboter [%s]"              (gROS)
 Switch Roboter_Kontrollgang "Kontrollgang starten"     (gROS)
+
+// Kapitel 14: Roboter und Haus (nicht in gROS – die Brücke wählt sie einzeln)
+String Roboter_Ziel        "Ziel des Roboters [%s]"
+String Roboter_Raum        "Roboter ist in [%s]"
+Number:Length Roboter_X    "Roboter x [%.1f m]"        { unit="m" }
+Number:Length Roboter_Y    "Roboter y [%.1f m]"        { unit="m" }
+Number:Dimensionless Roboter_Akku "Akku Roboter [%.0f %%]" { unit="%" }

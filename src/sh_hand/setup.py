@@ -18,7 +18,7 @@ setup(
     zip_safe=True,
     maintainer="Michael Christian Dörflinger",
     maintainer_email="michdo93@users.noreply.github.com",
-    description="Kapitel 17: Hand erkannt – Kinect, ROS 2, openHAB",
+    description="Kapitel 19: Hand erkannt – Kinect, ROS 2, openHAB oder Home Assistant",
     license="MIT",
     tests_require=["pytest"],
     entry_points={"console_scripts": ["hand_detektor = sh_hand.hand_detektor:main"]},

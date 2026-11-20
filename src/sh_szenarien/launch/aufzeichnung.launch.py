@@ -1,4 +1,4 @@
-"""Kapitel 12: Brücke starten und alle Item-Zustände mit rosbag2 aufzeichnen.
+"""Kapitel 13: Brücke starten und alle Item-Zustände mit rosbag2 aufzeichnen.
 
     ros2 launch sh_szenarien aufzeichnung.launch.py ziel:=~/aufnahmen/haus
     ros2 bag info ~/aufnahmen/haus

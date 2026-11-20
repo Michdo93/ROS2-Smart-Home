@@ -1,4 +1,4 @@
-"""Kapitel 16: eine Kamera, viele Anwendungen – alle am selben Kinect-Treiber.
+"""Kapitel 18: eine Kamera, viele Anwendungen – alle am selben Kinect-Treiber.
 
     ros2 launch sh_kamera viele_anwendungen.launch.py simulate:=true
 """

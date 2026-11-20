@@ -1,4 +1,4 @@
-"""Kapitel 17: hand_detektor – Tiefenbild rein, /hand_erkannt raus.
+"""Kapitel 19: hand_detektor – Tiefenbild rein, /hand_erkannt raus.
 
     ros2 run sh_hand hand_detektor --ros-args -p tiefe:=/kinect_v1/depth/image_raw
 """

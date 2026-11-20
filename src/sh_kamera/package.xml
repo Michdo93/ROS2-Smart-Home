@@ -3,7 +3,7 @@
 <package format="3">
   <name>sh_kamera</name>
   <version>1.0.0</version>
-  <description>Kapitel 13 und 16: Kamerabilder messen, komprimieren, teilen</description>
+  <description>Kapitel 15 und 16: Kamerabilder messen, komprimieren, teilen</description>
   <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>

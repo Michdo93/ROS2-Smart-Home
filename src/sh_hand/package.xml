@@ -3,7 +3,7 @@
 <package format="3">
   <name>sh_hand</name>
   <version>1.0.0</version>
-  <description>Kapitel 17: Hand erkannt – Kinect, ROS 2, openHAB</description>
+  <description>Kapitel 19: Hand erkannt – Kinect, ROS 2, openHAB oder Home Assistant</description>
   <maintainer email="michdo93@users.noreply.github.com">Michael Christian Dörflinger</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>
@@ -14,6 +14,7 @@
   <exec_depend>kinect_v1_ros2</exec_depend>
   <exec_depend>kinect_v2_ros2</exec_depend>
   <exec_depend>openhab_bridge</exec_depend>
+  <exec_depend>mqtt_client</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <test_depend>python3-pytest</test_depend>
   <export>

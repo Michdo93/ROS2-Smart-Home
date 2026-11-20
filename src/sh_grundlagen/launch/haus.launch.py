@@ -1,4 +1,4 @@
-"""Kapitel 7: drei Räume, ein Empfänger – Namespaces und Remapping.
+"""Kapitel 8: drei Räume, ein Empfänger – Namespaces und Remapping.
 
     ros2 launch sh_grundlagen haus.launch.py grenze:=900
 """

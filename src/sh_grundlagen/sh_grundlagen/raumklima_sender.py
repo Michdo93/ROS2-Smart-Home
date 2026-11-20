@@ -1,4 +1,4 @@
-"""Kapitel 4: Publisher – ein simulierter Raumsensor sendet jede Sekunde sein Raumklima.
+"""Kapitel 5: Publisher – ein simulierter Raumsensor sendet jede Sekunde sein Raumklima.
 
     ros2 run sh_grundlagen raumklima_sender --ros-args -p raum:=kueche -p intervall:=2.0
 """
@@ -19,7 +19,7 @@ class RaumklimaSender(Node):
         intervall = self.declare_parameter("intervall", 1.0).value
         self.pub = self.create_publisher(Raumklima, "raumklima", 10)
         self.timer = self.create_timer(intervall, self.senden)
-        self.add_on_set_parameters_callback(self.parameter_geaendert)  # Kapitel 5
+        self.add_on_set_parameters_callback(self.parameter_geaendert)  # Kapitel 6
         self.schritt = sum(map(ord, self.raum)) % 60     # jeder Raum startet anders
 
     def senden(self):
